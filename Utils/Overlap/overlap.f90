@@ -116,7 +116,7 @@ CONTAINS
     COMPLEX(8) a(n,n),det(2),work(n)
     integer ipvt(n),info
     call zgefa(a,n,n,ipvt,info)
-    if(info.ne.0) then
+    if(info/=0) then
        write(*,*) ' Determinant error ',info
        stop
     endif
