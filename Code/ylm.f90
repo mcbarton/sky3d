@@ -22,7 +22,7 @@ CONTAINS
       do i =1,n
          Fct = Fct*i
       end do
-   end function
+   end function Fact
 ! DESCRIPTION: Fact2(n)
 !> @brief
 !!Function Fact2 Calculates the double Factorial.
@@ -36,7 +36,7 @@ CONTAINS
          Fct2 = Fct2*n
          n=n-2
       end do
-   end function
+   end function Fact2
 
 ! DESCRIPTION: Plm
 !> @brief
@@ -78,7 +78,7 @@ CONTAINS
          end do
       end do
       P_lm = Ps(l+1,l+1-m)
-   end function
+   end function Plm
 ! DESCRIPTION: Y_lm
 !> @brief
 !!Function Y_lm Calculates the spherical harmonics (Real part)
@@ -109,6 +109,6 @@ CONTAINS
       end if
 
 
-   end function
+   end function Y_lm
 
 End Module Spherical_Harmonics
