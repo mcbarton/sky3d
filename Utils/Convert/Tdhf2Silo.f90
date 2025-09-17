@@ -33,7 +33,7 @@ PROGRAM Tdhf2Silo
   ! put this into silo file
   !
   ! set dimensions for following zone-centered arrays
-  dims=(/nx,ny,nz/)
+  dims=[nx,ny,nz]
   ! make options to add cycle number and time
   ret=dbmkoptlist(5,op)
   CALL errchk(ret,' could not make optlist')

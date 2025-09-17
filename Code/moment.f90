@@ -316,7 +316,7 @@ CONTAINS
 !---------------------------------------------------------------------------
   SUBROUTINE moment_print
     INTEGER :: iq
-    CHARACTER(11),PARAMETER :: Name(2)=(/ '  Neutron: ','   Proton: '/)
+    CHARACTER(11),PARAMETER :: Name(2)=[ '  Neutron: ','   Proton: ']
     Write(*,'(A)') '              Part.Num.   rms-radius   q20         &
          &<x**2>      <y**2>      <z**2>        <x>            &
          &<y>            <z>'

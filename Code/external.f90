@@ -113,8 +113,8 @@ CONTAINS
   SUBROUTINE init_external
     REAL(db) :: facn,facp,facr,xlim,ylim,zlim,dip_f
     INTEGER :: ix,iy,iz
-    CHARACTER(14),PARAMETER :: pulsetype(0:2)=(/ 'Instantaneous ', &
-         'Gaussian      ','Cosine squared' /)
+    CHARACTER(14),PARAMETER :: pulsetype(0:2)=[ 'Instantaneous ', &
+         'Gaussian      ','Cosine squared' ]
     IF(ipulse<0.OR.ipulse>2) STOP &
          ' External field: called with invalid pulse type'
     IF(wflag) THEN
