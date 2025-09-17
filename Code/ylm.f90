@@ -91,12 +91,12 @@ CONTAINS
 
       r=sqrt(x**2+y**2+z**2)
       cos_theta = z/r
-      if (y .ge. 0)then
+      if (y >= 0)then
          mphi = abs(m)*acos(x/(sqrt(x**2+y**2)))
       else
          mphi = -1*abs(m)*acos(x/(sqrt(x**2+y**2)))
       end if
-      if (m .lt. 0) then
+      if (m < 0) then
          const = sqrt(((2*l+1)*(Fact(l-abs(m))))/(4*PI*Fact(l+abs(m))))
          ylm_im = const*Plm(cos_theta,l,abs(m))*sin(mphi)
          Ylm = ylm_im!*((-1)**m)

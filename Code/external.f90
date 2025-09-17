@@ -140,7 +140,7 @@ CONTAINS
        facn=1.0D0
        facp=1.0D0
     ELSE
-      if (L_val .eq. 1)then
+      if (L_val == 1)then
        facn=-(charge_number/mass_number)
        facp=(mass_number-charge_number)/mass_number
        else
@@ -158,13 +158,13 @@ CONTAINS
           DO ix=1,nx
                                                                            ! damped version
                facr = ampl_ext*SQRT(2.0d0*L_val+1.0d0)
-               if (L_val .ge. 2)then
+               if (L_val >= 2)then
                   facr=facr*Y_lm(L_val,M_val,x(ix),y(iy),z(iz))
                   facr=facr*SQRT(x(ix)**2+y(iy)**2+z(iz)**2)**(L_val)
-               else if (L_val .eq. 0)then
+               else if (L_val == 0)then
                   facr=facr*(0.5d0*SQRT(1.0d0/PI))
                   facr=facr*SQRT(x(ix)**2+y(iy)**2+z(iz)**2)**(2)
-               else if (L_val .eq. 1)then
+               else if (L_val == 1)then
                   ! vol=wxyz*rho(ix,iy,iz,iq)
                   ! write(*,*)'RMS value of r for dipole case',r_avg
                   IF(isoext==0) THEN
@@ -181,7 +181,7 @@ CONTAINS
 
                end if
                facr=facr/(1.0D0+EXP((SQRT(x(ix)**2+y(iy)**2+z(iz)**2)-radext)/widext)) !< Damping is done using parameters radext and widext
-             if (only_P.eq.1)then
+             if (only_P==1)then
                extfield(ix,iy,iz,1)=0.0d0
                extfield(ix,iy,iz,2)=facr*facp
              else

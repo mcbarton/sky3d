@@ -233,7 +233,7 @@ CONTAINS
          facp=1.0D0
          Di_tot(iii) = facn*Di_is(1)+facp*Di_is(2)
       ELSE
-         if (L_val .eq. 1)then
+         if (L_val == 1)then
             facn=-(pnr(2)/pnrtot)
             facp=(pnr(1))/pnrtot
             Di_tot(iii) = facn*Di_iv(1)+facp*Di_iv(2)
