@@ -552,7 +552,7 @@ CONTAINS
     REAL(db) :: cent(3,2),center(3,2),angle,slopev,xx,zz,diff,vol, &
          bb,xmin,zmin,slope
     INTEGER :: ix,iy,iz,itcm,ifrag
-    INTEGER,PARAMETER :: swap(0:2)=(/ 0,2,1 /)
+    INTEGER,PARAMETER :: swap(0:2)=[ 0,2,1 ]
     Iteration: DO itcm=1,10
        ! calculate slope from centers of mass
        IF(itcm>1) THEN

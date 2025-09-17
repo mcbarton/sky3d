@@ -273,9 +273,9 @@ CONTAINS
     INTEGER,PARAMETER :: ixsc=10,izsc=6
     REAL(db) :: rhoplt(nx,nz),xperi
     CHARACTER(1) :: ifun(121),ibor(121)
-    CHARACTER(1),PARAMETER :: icar(25)=(/' ','1',' ','3',' ', &
+    CHARACTER(1),PARAMETER :: icar(25)=[' ','1',' ','3',' ', &
          '5',' ','7',' ','9',' ','b',' ','d',' ','f',' ','h', &
-         ' ','j',' ','l',' ','n','*' /)
+         ' ','j',' ','l',' ','n','*' ]
     REAL(db) ::  xco(nx+1),zco(nz+1),dimx,dimz,dxp,dzp, &
          xcu,zcu
     INTEGER :: nhor,nver,ntkx,ntkz,jcar,ntz,i,j

@@ -83,22 +83,22 @@ CONTAINS
          FFTW_FORWARD, FFTW_planflag)
     CALL dfftw_plan_dft_3d(pbackward,nx,ny,nz,p(:,:,:,1,1),p(:,:,:,1,1), &
          FFTW_BACKWARD, FFTW_planflag)
-    CALL dfftw_plan_many_dft(xforward,1,(/nx/),2*ny*nz, &
+    CALL dfftw_plan_many_dft(xforward,1,[nx],2*ny*nz, &
          p(:,:,:,:,1),0,1,nx,p(:,:,:,:,2),0,1,nx, &
          FFTW_FORWARD, FFTW_planflag)
-    CALL dfftw_plan_many_dft(xbackward,1,(/nx/),2*ny*nz, &
+    CALL dfftw_plan_many_dft(xbackward,1,[nx],2*ny*nz, &
          p(:,:,:,:,1),0,1,nx,p(:,:,:,:,1),0,1,nx, &
          FFTW_BACKWARD, FFTW_planflag)
-  CALL dfftw_plan_many_dft(yforward,1,(/ny/),nx, &
+  CALL dfftw_plan_many_dft(yforward,1,[ny],nx, &
        p(:,:,:,:,1),0,nx,1,p(:,:,:,:,2),0,nx,1, &
        FFTW_FORWARD, FFTW_planflag)
-  CALL dfftw_plan_many_dft(ybackward,1,(/ny/),nx, &
+  CALL dfftw_plan_many_dft(ybackward,1,[ny],nx, &
        p(:,:,:,:,1),0,nx,1,p(:,:,:,:,1),0,nx,1, &
        FFTW_BACKWARD, FFTW_planflag)
-  CALL dfftw_plan_many_dft(zforward,1,(/nz/),nx*ny, &
+  CALL dfftw_plan_many_dft(zforward,1,[nz],nx*ny, &
        p(:,:,:,:,1),0,nx*ny,1,p(:,:,:,:,2),0,nx*ny,1, &
        FFTW_FORWARD, FFTW_planflag)
-  CALL dfftw_plan_many_dft(zbackward,1,(/nz/),nx*ny, &
+  CALL dfftw_plan_many_dft(zbackward,1,[nz],nx*ny, &
        p(:,:,:,:,1),0,nx*ny,1,p(:,:,:,:,1),0,nx*ny,1, &
        FFTW_BACKWARD, FFTW_planflag)
     IF(wflag) WRITE(*,*) '***** FFTW3 plans established *****'
