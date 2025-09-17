@@ -1,17 +1,17 @@
 !------------------------------------------------------------------------------
 ! MODULE: Parallel
 !------------------------------------------------------------------------------
-! DESCRIPTION: 
+! DESCRIPTION:
 !> @brief
-!!contains the same routines as in file \c parallel.f90, but with mostly empty 
-!!functions to enable sequential running. 
+!!contains the same routines as in file \c parallel.f90, but with mostly empty
+!!functions to enable sequential running.
 !------------------------------------------------------------------------------
 MODULE Parallel
   USE Params, ONLY: wflag,db
   USE Levels, ONLY: nstmax,npsi,nstloc
   IMPLICIT NONE
   SAVE
-  LOGICAL,PARAMETER :: tmpi=.FALSE. 
+  LOGICAL,PARAMETER :: tmpi=.FALSE.
   INTEGER, ALLOCATABLE :: node(:),localindex(:),globalindex(:)
   INTEGER :: mpi_nprocs,mpi_ierror,mpi_myproc, &
        processor_name,proc_namelen
@@ -68,7 +68,7 @@ CONTAINS     !  all dummy subroutines to run on a sequential machine
     INTEGER :: i
     node=0
     nstloc=nstmax
-    FORALL(i=1:nstmax) 
+    FORALL(i=1:nstmax)
        globalindex(i)=i
        localindex(i)=i
     END FORALL
