@@ -20,7 +20,7 @@ PROGRAM Analyze
      OPEN(UNIT=11,FILE=file1,STATUS ='old',FORM='unformatted')
      OPEN(UNIT=12,FILE=file2,STATUS ='old',FORM='unformatted')
      READ(11) iter,time,forcename,nstmax,nneut,nprot,number,npsi, &
-          charge_number,mass_number,cm  
+          charge_number,mass_number,cm
      READ(12) iter,time,forcename2,nstmax2,nneut2,nprot2,number,npsi, &
           charge_number,mass_number,cm2
      IF(nstmax/=nstmax2.OR.nneut/=nneut2.OR.nprot/=nprot2) THEN

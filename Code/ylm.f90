@@ -1,11 +1,11 @@
 !------------------------------------------------------------------------------
 ! MODULE: Spherical Harmonics
 !------------------------------------------------------------------------------
-! DESCRIPTION: 
+! DESCRIPTION:
 !> @brief
 !!This module contains the definition of the spherical harmonics function \f$Y_{LM}\f$
 !>
-!>@details 
+!>@details
 !! It contains the definition \f$Y_{LM}\f$ in terms of Associate Legendre Polinomial (\f$P_{LM}\f$)
 Module Spherical_Harmonics
    USE Params, ONLY: db,pi
@@ -13,8 +13,8 @@ CONTAINS
 ! DESCRIPTION: Fact(n)
 !> @brief
 !!Function Fact Calculates the Factorial.
-   REAL(db) function Fact(n)result(Fct) 
-      
+   REAL(db) function Fact(n)result(Fct)
+
       IMPLICIT NONE
       integer:: n,i
       ! real(db)::Fct
@@ -26,8 +26,8 @@ CONTAINS
 ! DESCRIPTION: Fact2(n)
 !> @brief
 !!Function Fact2 Calculates the double Factorial.
-   REAL(db) function Fact2(n)result(Fct2) 
-      
+   REAL(db) function Fact2(n)result(Fct2)
+
       IMPLICIT NONE
       integer :: n,i
       ! real(db)::Fct2
@@ -41,7 +41,7 @@ CONTAINS
 ! DESCRIPTION: Plm
 !> @brief
 !!Function Plm Calculates the Associate Legendre Polinomial
-   real(db) function Plm(x,l,m)result(P_lm) 
+   real(db) function Plm(x,l,m)result(P_lm)
       IMPLICIT NONE
       integer, intent(in) :: l,m
       integer :: em_i,em_i_lower,em_i_lower2,el,em
@@ -57,7 +57,7 @@ CONTAINS
       P00=1
       P10=x
       P11 = -sqrt(1-x**2)
-      
+
       ALLOCATE(Ps(l+1,(2*l+1)))
       Ps=0.0D0
       Ps(1,1)=P00
@@ -65,7 +65,7 @@ CONTAINS
       Ps(2,2) = P10
       Ps(2,3) = -Ps(2,1)/2
       do el = 2,l
-         Ps(el+1,el-el+1) = ((-1)**el)*Fact2(2*el-1)*(1-x**2)**(el/2) 
+         Ps(el+1,el-el+1) = ((-1)**el)*Fact2(2*el-1)*(1-x**2)**(el/2)
          do em = el-1,-el,-1
             em_i = el-em+1
             if (em>=0)then
@@ -82,7 +82,7 @@ CONTAINS
 ! DESCRIPTION: Y_lm
 !> @brief
 !!Function Y_lm Calculates the spherical harmonics (Real part)
-   real(db) function Y_lm(l,m,x,y,z)result(Ylm) 
+   real(db) function Y_lm(l,m,x,y,z)result(Ylm)
       IMPLICIT NONE
       integer, intent(in) :: l,m
       real(db), intent(in) :: x,y,z
@@ -107,7 +107,7 @@ CONTAINS
          Ylm = ylm_re
          ! write(*,*) 'positive m',l,m,abs(m),mphi*180/pi,acos(cos_theta)*180/pi,x,y,z,cos(mphi)
       end if
-      
+
 
    end function
 

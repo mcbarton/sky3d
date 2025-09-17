@@ -1,7 +1,7 @@
 !------------------------------------------------------------------------------
 ! MODULE: Fourier
 !------------------------------------------------------------------------------
-! DESCRIPTION: 
+! DESCRIPTION:
 !> @brief
 !!This module initializes the \c FFTW3 package for doing Fourier
 !!transforms \cite Fri05a. It needs the file \c fftw3.f from the
@@ -41,7 +41,7 @@ MODULE Fourier
   INTEGER(C_LONG),SAVE :: zforward,zbackward
   !>@}
 CONTAINS
-!---------------------------------------------------------------------------  
+!---------------------------------------------------------------------------
 ! DESCRIPTION: init_fft
 !> @brief
 !!In this subroutine the \c FFTW system is initialized
@@ -67,11 +67,11 @@ CONTAINS
 !!these calls: in the code all transforms are in-place except for \c xforward,
 !!\c yforward, and \c zforward. It was found that
 !!very strange things happen if this rule is not obeyed.
-!--------------------------------------------------------------------------- 
+!---------------------------------------------------------------------------
   SUBROUTINE init_fft
     INCLUDE 'fftw3.f'
     COMPLEX(db),ALLOCATABLE :: p(:,:,:,:,:)
-    INTEGER,SAVE :: FFTW_planflag             
+    INTEGER,SAVE :: FFTW_planflag
 ! set option for FFTW setup here
 !    FFTW_planflag=FFTW_ESTIMATE
 !    FFTW_planflag=FFTW_MEASURE

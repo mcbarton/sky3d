@@ -49,7 +49,7 @@ CONTAINS
     WRITE(*,*) 'Writing ',filename
     OPEN(UNIT=11,FILE=filename,FORM='FORMATTED',STATUS='REPLACE')
     DO j=1,m
-       DO i=1,n 
+       DO i=1,n
           WRITE(11,'(2F8.3,E14.6)') b(i),c(j),a(i,j)
        END DO
        WRITE(11,'(1X)')
