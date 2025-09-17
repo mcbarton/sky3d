@@ -220,7 +220,7 @@ CONTAINS
     CHARACTER(*),INTENT(IN) :: name
     REAL(db),INTENT(IN) :: values(nx,ny,nz,2)
     CHARACTER(10) :: stored_name
-    REAL(db) a(nx,ny,nz)
+    REAL(db) :: a(nx,ny,nz)
     stored_name=name
     WRITE(scratch) stored_name,.FALSE.,write_isospin
     IF(write_isospin) THEN
@@ -245,7 +245,7 @@ CONTAINS
     CHARACTER(*),INTENT(IN) :: name
     REAL(db),INTENT(IN) :: values(nx,ny,nz,3,2)
     CHARACTER(10) :: stored_name
-    REAL(db) a(nx,ny,nz,3)
+    REAL(db) :: a(nx,ny,nz,3)
     stored_name=name
     WRITE(scratch) stored_name,.TRUE.,write_isospin
     IF(write_isospin) THEN

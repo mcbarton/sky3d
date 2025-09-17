@@ -11,8 +11,8 @@ PROGRAM Tdhf2Silo
   CHARACTER(11) :: filename
   CHARACTER :: stored_name*10
   INTEGER :: is,ret,iret,dims(3),dbid,op,i,ndefs
-  INTEGER err, ierr, types(maxdefs), lnames(maxdefs), ldefs(maxdefs)
-  INTEGER oldlen
+  INTEGER :: err, ierr, types(maxdefs), lnames(maxdefs), ldefs(maxdefs)
+  INTEGER :: oldlen
   ! Initialize some 20 character length strings
   CHARACTER(40) :: names(maxdefs),defs(maxdefs)
   ! Store the length of each string
