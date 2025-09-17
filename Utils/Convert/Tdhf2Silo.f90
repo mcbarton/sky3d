@@ -107,7 +107,7 @@ PROGRAM Tdhf2Silo
   !*******************************************************************
 CONTAINS
   SUBROUTINE write_density(rname,data)
-    CHARACTER*(*),INTENT(IN) :: rname
+    CHARACTER(len=*),INTENT(IN) :: rname
     REAL(8),INTENT(IN) :: data(*)
     WRITE(*,*) 'Writing ',rname,'  ',LEN(rname)
     ret=dbputqv1(dbid,rname,LEN(rname),'Mesh',4,data,dims,3, &
