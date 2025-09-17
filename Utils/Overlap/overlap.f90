@@ -113,8 +113,8 @@ CONTAINS
   END FUNCTION scalprod
   COMPLEX(8) function determinant(a,n)
     INTEGER,INTENT(IN) :: n
-    COMPLEX(8) a(n,n),det(2),work(n)
-    integer ipvt(n),info
+    COMPLEX(8) :: a(n,n),det(2),work(n)
+    integer :: ipvt(n),info
     call zgefa(a,n,n,ipvt,info)
     if(info/=0) then
        write(*,*) ' Determinant error ',info
