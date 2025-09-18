@@ -211,7 +211,8 @@ CONTAINS
        WRITE(*,"(5(A6,F12.5))") "x0",f%x0,"x1",f%x1,"x2",f%x2,"x3",f%x3,"b4p",f%b4p
        WRITE(*,"(A6,F12.5)") "Power",f%power
        WRITE(*,"(A,I2)") " Pairing parameters: Option ipair:",ipair
-       WRITE(*,"(3(A7,F12.5))") "v0prot",p%v0prot,"v0neut",p%v0neut,"rho0pr",p%rho0pr,'MIX',p%mixture
+       WRITE(*,"(3(A7,F12.5))") "v0prot",p%v0prot,"v0neut",p%v0neut,"rho0pr",p%rho0pr,'MIX',&
+                                p%mixture
     ENDIF
   END SUBROUTINE read_force
 END MODULE Forces

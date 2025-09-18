@@ -71,7 +71,8 @@ CONTAINS
             if (em>=0)then
                   em_i_lower = el-em
                   em_i_lower2 = el-1-em
-                  Ps(el+1,em_i) = (x*(2*el-1)*Ps(el,em_i_lower)-(el+em-1)*Ps(el-1,em_i_lower2))/(el-em)
+                  Ps(el+1,em_i) = (x*(2*el-1)*Ps(el,em_i_lower)-(el+em-1)*Ps(el-1,em_i_lower2))/&
+                                  (el-em)
             else if (em<0)then
                   Ps(el+1, em_i) = ((-1)**abs(m))*(Fact(l-m)/Fact(l+m))*Ps(el+1,el+1+em)
             end if
