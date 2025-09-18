@@ -136,7 +136,7 @@ CONTAINS
 !> REAL(db), array, returns matrix for damping.
 !---------------------------------------------------------------------------
   SUBROUTINE init_coord(name,nv,dv,v,der1v,der2v,cdmpv)
-    CHARACTER(*) :: name
+    CHARACTER(len=1) :: name
     INTEGER :: nv
     REAL(db) :: dv
     INTENT(IN) :: name,nv,dv
@@ -146,7 +146,7 @@ CONTAINS
     ALLOCATE(v(nv),der1v(nv,nv),der2v(nv,nv),cdmpv(nv,nv))
     v=[ ((i-1)*dv-0.5D0*FLOAT(nv-1)*dv,i=1,nv) ]
     IF(wflag) THEN
-       WRITE(*,'(1X,A,I3,A,F8.4,2(A,F8.4))') name // ' direction: ',nv, &
+       WRITE(*,'(1X,A,I3,A,F8.4,2(A,F8.4))') trim(name) // ' direction: ',nv, &
             ' points, spacing:',dv,' ranging from ',v(1),' to ',v(nv)
     ENDIF
     CALL sder(der1v,nv,dv)
