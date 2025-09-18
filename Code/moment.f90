@@ -193,8 +193,8 @@ CONTAINS
 
 
                 eta = vol*(SUM(x2))*5.0d0/3.0d0
-                Di_is(iq)=vol*(Y_lm(1,M_val,x(ix),y(iy),z(iz))*(SQRT(x(ix)**2+y(iy)**2+z(iz)**2)**3- &
-                           SQRT(x(ix)**2+y(iy)**2+z(iz)**2)*eta)*SQRT(2*1+1.0d0))+Di_is(iq)
+                Di_is(iq)=vol*(Y_lm(1,M_val,x(ix),y(iy),z(iz))*(SQRT(x(ix)**2+y(iy)**2+z(iz)**2)**3&
+                     - SQRT(x(ix)**2+y(iy)**2+z(iz)**2)*eta)*SQRT(2*1+1.0d0))+Di_is(iq)
                !  print*,'inside loop 1'
 
                 tmp=(Y_lm(1,M_val,x(ix),y(iy),z(iz))*SQRT(3.0d0))

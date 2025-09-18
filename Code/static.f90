@@ -606,7 +606,8 @@ CONTAINS
     ! add information to summary files
     OPEN(unit=scratch,file=converfile,POSITION='APPEND')
    WRITE(scratch,'(2x,i5,f9.2,3(1pg11.3),6(0pf15.8),f15.8,f15.8)') &
-         iter,ehf,delesum/pnrtot,efluct1,efluct2,rmstot,r2tot,r3tot,r4tot,beta,gamma,avdelt(1),avdelt(2)
+        iter,ehf,delesum/pnrtot,efluct1,efluct2,rmstot,r2tot,r3tot,r4tot,beta,gamma,avdelt(1),&
+        avdelt(2)
     CLOSE(scratch)
     OPEN(unit=scratch,file=dipolesfile, POSITION='APPEND')
     WRITE(scratch,'(1x,i5,6E14.4)') iter,cmtot,cm(:,2)-cm(:,1)

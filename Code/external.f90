@@ -171,7 +171,8 @@ CONTAINS
                   facr=facr*Y_lm(L_val,M_val,x(ix),y(iy),z(iz))
                   dip_f = (r_avg**2)*5.0d0/3.0d0
                   ! write(*,*)'__DIPOLE FACTOR__',r_avg,dip_f
-                  facr=facr*(SQRT(x(ix)**2+y(iy)**2+z(iz)**2)**3 - dip_f*SQRT(x(ix)**2+y(iy)**2+z(iz)**2))
+                  facr=facr*(SQRT(x(ix)**2+y(iy)**2+z(iz)**2)**3 - &
+                       dip_f*SQRT(x(ix)**2+y(iy)**2+z(iz)**2))
 
                   else if (isoext==1) then
                   facr=facr*Y_lm(L_val,M_val,x(ix),y(iy),z(iz))
