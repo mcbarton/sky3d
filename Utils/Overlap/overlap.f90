@@ -3,13 +3,13 @@ PROGRAM Analyze
   INTEGER :: nstmax,nneut,nprot,nx,ny,nz
   INTEGER :: iter,number(2),npsi(2)
   INTEGER :: nstmax2,nneut2,nprot2,nx2,ny2,nz2
-  REAL(8) :: time,charge_number,mass_number,cm(3),cm2(3),dx,dy,dz, &
+  REAL(db) :: time,charge_number,mass_number,cm(3),cm2(3),dx,dy,dz, &
        wxyz,wxyz2
-  CHARACTER(8) :: forcename,forcename2
-  COMPLEX(8),ALLOCATABLE,DIMENSION(:,:,:,:,:) :: psi1,psi2
-  COMPLEX(8) :: norm,on,op
-  COMPLEX(8),ALLOCATABLE :: ovn(:,:),ovp(:,:)
-  REAL(8) :: fn,fp,dnmax,dnmin,dpmax,dpmin,onmax,opmax
+  CHARACTER(db) :: forcename,forcename2
+  COMPLEX(db),ALLOCATABLE,DIMENSION(:,:,:,:,:) :: psi1,psi2
+  COMPLEX(db) :: norm,on,op
+  COMPLEX(db),ALLOCATABLE :: ovn(:,:),ovp(:,:)
+  REAL(db) :: fn,fp,dnmax,dnmin,dpmax,dpmin,onmax,opmax
   INTEGER :: i,j,m
   CHARACTER(40) :: file1,file2
   DO
@@ -106,14 +106,14 @@ PROGRAM Analyze
   END DO
 1 STOP
 CONTAINS
-  COMPLEX(8) FUNCTION scalprod(a,b)
+  COMPLEX(db) FUNCTION scalprod(a,b)
     IMPLICIT NONE
-    COMPLEX(8),INTENT(IN),DIMENSION(:,:,:,:) :: a,b
+    COMPLEX(db),INTENT(IN),DIMENSION(:,:,:,:) :: a,b
     scalprod=SUM(CONJG(a)*b)*wxyz
   END FUNCTION scalprod
-  COMPLEX(8) function determinant(a,n)
+  COMPLEX(db) function determinant(a,n)
     INTEGER,INTENT(IN) :: n
-    COMPLEX(8) :: a(n,n),det(2),work(n)
+    COMPLEX(db) :: a(n,n),det(2),work(n)
     integer :: ipvt(n),info
     call zgefa(a,n,n,ipvt,info)
     if(info/=0) then
