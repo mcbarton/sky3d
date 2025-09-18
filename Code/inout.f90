@@ -30,15 +30,19 @@
 !!match the purpose of this module but are placed here for convenience.
 !------------------------------------------------------------------------------
 MODULE Inout
-  USE Params
+  USE Params, ONLY: scratch, trestart, tfft, write_isospin, iter, nselect, &
+       tdynamic, time, scratch2, wffile, writeselect,db,wflag
   USE Parallel, ONLY: node,localindex,mpi_myproc
-  USE Grids
+  USE Grids, ONLY: x,y,z,der1x,der2x,der1y,der2y,der1z,der2z,wxyz,&
+       nx,ny,nz,dx,dy,dz
   USE Forces, ONLY:f
   USE Moment, ONLY: cm,cmtot
   USE Densities, ONLY: rho,tau,current,sdens,sodens
   USE Meanfield, ONLY: upot
   USE Coulomb, ONLY: wcoul
-  USE Levels
+  USE Levels, ONLY: sp_kinetic,sp_orbital,sp_parity,isospin,wocc,sp_norm, &
+       sp_energy,sp_efluct1,nstmax,npsi,nprot,nneut,npmin,charge_number,&
+       sp_spin,mass_number,psi
   IMPLICIT NONE
   PRIVATE :: write_one_density,write_vec_density
 CONTAINS

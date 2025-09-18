@@ -9,19 +9,25 @@
 !!are equally used in the static calculation.
 !------------------------------------------------------------------------------
 MODULE DYNAMIC
-  USE Params
-  USE Grids, ONLY: nx,ny,nz,wxyz
-  USE Densities
-  USE Levels
-  USE Energies
-  USE Moment
+  USE Params, ONLY: energiesfile, iter, momentafile, monopolesfile, mrest, &
+       octupolesfile, quadrupolesfile, spinfile, trestart, energiesfile, &
+       mplot, mprint, nof, printnow, diatriacontapolesfile, dipolesfile, &
+       hexadecapolesfile,hbc,db,extfieldfile,wflag,scratch,time
+  USE Grids, ONLY: nx,ny,nz,wxyz,x,y,z
+  USE Densities, ONLY: rho, tau, sdens, sodens, current
+  USE Levels, ONLY: wocc, npmin, psi, sp_norm, sp_energy, sp_orbital, sp_spin, &
+      sp_kinetic, nstmax,nstloc,isospin
+  USE Forces, ONLY:f
+  USE Energies, ONLY: total_angmom, tke, ehfls, ehf, ehf0, ehf1, ehf2, ehf3, &
+       ehfc, ehfint, orbital, spin
+  USE Moment, ONLY: pnr, pcm
   USE Twobody, ONLY: twobody_analysis,istwobody,roft,roft_old
-  USE Parallel
+  USE Parallel, ONLY: tmpi, mpi_nprocs,globalindex
   USE Meanfield, ONLY: skyrme, hpsi, spot
   USE Trivial, ONLY: overlap
   USE Inout, ONLY: write_wavefunctions,write_densities, plot_density, &
        sp_properties,start_protocol
-  USE External
+  USE External, ONLY: l_val, M_val
   IMPLICIT NONE
   SAVE
   INTEGER            :: nt                !< the number of the final time step to be

@@ -42,7 +42,7 @@ MODULE External
   USE Grids, ONLY: nx,ny,nz,x,y,z,dx,dy,dz,wxyz
   USE Levels, ONLY: nstloc,isospin,charge_number,mass_number
   USE MEANFIELD, ONLY: upot
-  Use Spherical_Harmonics
+  Use Spherical_Harmonics, ONLY: y_lm
   IMPLICIT NONE
   INTEGER :: isoext=0        !< isospin behavior of the external field: \c isoext
                                      !! denotes the same action on protons and neutrons,

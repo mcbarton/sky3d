@@ -1,7 +1,6 @@
 MODULE User
-  USE Params
-  USE Grids
-  USE Levels
+  USE Params, ONLY: db
+  USE Levels, ONLY: wocc,psi
   IMPLICIT NONE
 CONTAINS
   SUBROUTINE init_user

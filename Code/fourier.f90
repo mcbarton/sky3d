@@ -19,7 +19,7 @@
 MODULE Fourier
   USE params, ONLY: db,wflag
   USE Grids, ONLY: nx,ny,nz
-  USE ISO_C_BINDING
+  USE ISO_C_BINDING, ONLY: c_long
   IMPLICIT NONE
   !>@name plans for full three-dimensional forward and backward transforms for both spin components.
   !>@{

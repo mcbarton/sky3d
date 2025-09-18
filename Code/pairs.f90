@@ -29,7 +29,7 @@ MODULE Pairs
   USE Forces, ONLY: ipair,p
   USE Grids, ONLY: nx,ny,nz,wxyz
   USE Densities, ONLY:rho
-  USE Levels
+  USE Levels, ONLY: npmin,wocc,charge_number,mass_number,sp_energy,psi,nstmax,npsi
   IMPLICIT NONE
   PRIVATE
   PUBLIC :: pair,epair,avdelt

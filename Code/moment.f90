@@ -25,9 +25,11 @@
 
 !------------------------------------------------------------------------------
 MODULE Moment
-  USE Params
+  USE Params, ONLY: printnow, wflag, diatriacontapolesfile, dipolesfile, &
+       hexadecapolesfile, monopolesfile, octupolesfile, quadrupolesfile, &
+       scratch, time, r0, tdynamic, db, pi
   USE Grids, ONLY: nx,ny,nz,x,y,z,wxyz
-  USE Spherical_Harmonics
+  USE Spherical_Harmonics, ONLY: y_lm
 
   IMPLICIT NONE
   PRIVATE

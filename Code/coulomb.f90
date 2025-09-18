@@ -111,7 +111,7 @@ MODULE Coulomb
   USE Params, ONLY: db,pi,e2
   USE Grids, ONLY: nx,ny,nz,dx,dy,dz,wxyz,periodic
   USE Densities, ONLY: rho
-  USE ISO_C_BINDING
+  USE ISO_C_BINDING, ONLY: c_long
   IMPLICIT NONE
   !>@name Dimensions of the grid on which the Fourier transform is calculated.
   !>For the periodic case they are identical to the regular dimensions, for the

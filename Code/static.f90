@@ -8,13 +8,19 @@
 !!for \c External are equally used in the dynamic calculation.
 !------------------------------------------------------------------------------
 MODULE Static
-  USE Params
-  USE Densities
+  USE Params, ONLY: db,converfile,dipolesfile,iter,mplot,scratch,spinfile,&
+       wflag,mprint,tfft,mrest,trestart,nof
+  USE Densities, ONLY: rho,sdens,current,tau,sodens
   USE Meanfield, ONLY: skyrme, hpsi, upot, bmass
-  USE Levels
-  USE Grids
-  USE Moment
-  USE Energies
+  USE Levels, ONLY: npmin,npsi,sp_efluct1,sp_efluct2,wocc,psi,nstmax,nprot,&
+       nneut,mass_number,charge_number,sp_norm,sp_energy,isospin,laplace,&
+       sp_orbital,hmatr,sp_spin,sp_kinetic,sp_parity
+  USE Grids, ONLY: cdmpx,cdmpy,cdmpz,x,y,z,nx,ny,nz
+  USE Moment, ONLY: rmstot,r4tot,r3tot,r2tot,pnrtot,gamma,beta,cm,cmtot
+  USE Forces, ONLY: f
+  USE Energies, ONLY: ipair, ehfprev, ehf, efluct2prev, efluct2, efluct1prev, &
+       efluct1,tke,total_angmom,spin,orbital,ehfls,ehfint,ehfc,ehf3,ehf2,ehf1, &
+       ehf0,ecorc,e3corr
   USE Inout, ONLY: write_wavefunctions, write_densities, plot_density, &
        sp_properties,start_protocol
   USE Pairs, ONLY: pair,epair,avdelt
