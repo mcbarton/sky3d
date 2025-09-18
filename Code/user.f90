@@ -42,8 +42,11 @@
 !!to initialize the dynamic calculation.
 !---------------------------------------------------------------------------
 MODULE User
+  ! allow(use-all)
   USE Params
+  ! allow(use-all)
   USE Grids
+  ! allow(use-all)
   USE Levels
   IMPLICIT NONE
 CONTAINS

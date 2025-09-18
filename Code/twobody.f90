@@ -8,10 +8,10 @@
 !!including scattering angles and momenta.
 !------------------------------------------------------------------------------
 MODULE Twobody
-  USE Params
-  USE Grids
-  USE Densities
-  USE Coulomb
+  USE Params, ONLY: db,pi,time,e2,hbc
+  USE Grids, ONLY: x,y,z,nx,ny,nz,wxyz,dx,dz
+  USE Densities, ONLY: rho,current
+  USE Coulomb, ONLY: wcoul
   USE Forces, ONLY: nucleon_mass
   IMPLICIT NONE
   ! Constants

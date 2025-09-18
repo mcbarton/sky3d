@@ -28,10 +28,12 @@
 
 !------------------------------------------------------------------------------
 MODULE Fragments
-  USE Params
-  USE Grids
+  USE Params, ONLY: db,mnof,wflag,e2,hbc,pi,scratch,wffile,nof,iter,tdynamic,time, &
+       trestart,tstatic
+  USE Grids, ONLY: x,y,z,nx,ny,nz,dx,dy,dz
   USE Forces, ONLY: f,nucleon_mass
-  USE Levels
+  USE Levels, ONLY: npmin, npsi, sp_efluct1, sp_kinetic, sp_norm, sp_parity, sp_energy, &
+       wocc, isospin, psi, nstmax, nprot, nneut, mass_number, charge_number
   IMPLICIT NONE
   SAVE
   PRIVATE
@@ -280,7 +282,7 @@ CONTAINS
 !---------------------------------------------------------------------------
   SUBROUTINE read_one_fragment(iff)
     USE Parallel, ONLY: node,mpi_myproc,localindex
-    USE Fourier
+    USE Fourier, ONLY: pbackward,pforward
     INTEGER,INTENT(IN) :: iff
     LOGICAL :: multifile
     INTEGER :: ipn

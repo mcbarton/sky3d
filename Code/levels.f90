@@ -7,9 +7,10 @@
 !!the pertinent arrays, allocating their storage and simple operations on them.
 !------------------------------------------------------------------------------
 MODULE Levels
-  USE Params, ONLY: db,pi
+  USE Params, ONLY: db,pi, wflag
   USE Grids, ONLY: nx,ny,nz,dx,dy,dz
-  USE Fourier
+  USE Fourier, ONLY: pbackward, pforward, zbackward, zforward, ybackward, &
+       yforward, xbackward, xforward
   IMPLICIT NONE
   SAVE
   INTEGER :: nstmax                        !<is the total number of wave functions

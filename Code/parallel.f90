@@ -33,7 +33,6 @@
 MODULE Parallel
   USE Params, ONLY : wflag
   USE Grids, ONLY: nx,ny,nz
-  USE Levels
   IMPLICIT NONE
   INCLUDE 'mpif.h'
   SAVE

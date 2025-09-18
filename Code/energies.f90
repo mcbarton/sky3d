@@ -69,9 +69,12 @@
 !------------------------------------------------------------------------------
 MODULE Energies
   USE Params, ONLY: db,tcoul
-  USE Forces
-  USE Densities
-  USE Levels
+  USE Forces, ONLY: f, b0, b0p, b1, b1p, b2, b2p, b3, b3p, b4, b4, b4p, slate, &
+       ipair
+  USE Densities, ONLY: rho, tau, sdens, current, sodens
+  USE Levels, ONLY: sp_kinetic, sp_energy, sp_efluct1, sp_efluct2, wocc, sp_orbital, &
+       sp_spin
+  USE Grids, ONLY: nx,ny,nz
   USE Pairs, ONLY: epair
   IMPLICIT NONE
   SAVE

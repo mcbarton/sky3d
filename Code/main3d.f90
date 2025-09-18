@@ -54,19 +54,19 @@
 !! -# finally the \c MPI system is terminated.
 !------------------------------------------------------------------------------
 PROGRAM tdhf3d
-  USE Params
-  USE Fourier
+  USE Params, ONLY: wffile,converfile,monopolesfile,dipolesfile,momentafile,&
+       energiesfile,quadrupolesfile,spinfile,extfieldfile,tcoul,mprint,mplot,&
+       trestart,writeselect,write_isospin,mrest,tfft,nof,r0,mnof,tdynamic,tstatic,&
+       wflag
   USE Forces, ONLY: read_force
   USE Densities, ONLY: alloc_densities
   USE Meanfield, ONLY: alloc_fields
-  USE Levels
+  USE Levels, ONLY: nstmax, npsi, npmin
   USE Grids, ONLY: init_grid
-  USE Fragments
-  USE Parallel
+  USE Parallel, ONLY: mpi_comm_world, tmpi, mpi_ierror
   USE Dynamic, ONLY: getin_dynamic,dynamichf
   USE Static, ONLY: getin_static,init_static,statichf,harmosc
   USE Coulomb, ONLY: coulinit
-  USE User
   IMPLICIT NONE
   INTEGER :: imode,nofsave
   !***********************************************************************

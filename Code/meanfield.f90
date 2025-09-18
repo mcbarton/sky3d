@@ -23,9 +23,9 @@
 !!not need access to the wave functions.
 !------------------------------------------------------------------------------
 Module Meanfield
-  USE Params, ONLY: db,tcoul
-  USE Densities
-  USE Forces
+  USE Params, ONLY: db,tcoul, tfft
+  USE Densities, ONLY: rho,sdens,current,tau,sodens
+  USE Forces, ONLY: f,b0,b0p,b1,b1p,b2,b2p,b3,b3p,b4,b4p,slate
   USE Grids, ONLY: nx,ny,nz,der1x,der2x,der1y,der2y,der1z,der2z
   USE Coulomb, ONLY: poisson,wcoul
   IMPLICIT NONE
