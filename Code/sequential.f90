@@ -79,7 +79,7 @@ CONTAINS     !  all dummy subroutines to run on a sequential machine
        i_double_precision,sum,  &
        comm_world,ierror)
     INTEGER :: ierror, comm_world, i_double_precision, length, sum
-    REAL(db), DIMENSION(*), INTENT(IN) :: rho,tmp_rho
+    REAL(db), DIMENSION(:), INTENT(IN) :: rho,tmp_rho
     STOP ' parallel calls inhibited '
     RETURN
   END SUBROUTINE mpi_allreduce

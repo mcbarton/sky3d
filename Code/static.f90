@@ -526,10 +526,13 @@ CONTAINS
        SUBROUTINE zheevd( jobz, uplo, n, a, lda, w, work, &
             lwork, rwork, lrwork, iwork, liwork, info )
          USE Params, ONLY: db
+         implicit none
+         INTEGER :: lda
          CHARACTER(1) :: jobz, uplo
-         INTEGER :: info, ldab, liwork, lrwork, lwork, n, iwork(*)
-         DOUBLE PRECISION ::  rwork( * ), w( * )
-         COMPLEX(8) :: a( lda, * ), work( * )
+         INTEGER :: info, ldab, liwork, lrwork, lwork, n, iwork(:)
+         DOUBLE PRECISION ::  rwork(:), w(:)
+         COMPLEX(db) :: a(:,:)
+         COMPLEX(db) :: work(:)
          INTENT(IN) :: jobz,uplo,n,lda,lwork,lrwork,liwork
          INTENT(INOUT) :: a
          INTENT(OUT) :: w,work,rwork,iwork,info
