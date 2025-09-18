@@ -8,7 +8,8 @@
 !>@details
 !! It contains the definition \f$Y_{LM}\f$ in terms of Associate Legendre Polinomial (\f$P_{LM}\f$)
 Module Spherical_Harmonics
-   USE Params, ONLY: db,pi
+  USE Params, ONLY: db,pi
+  implicit none
 CONTAINS
 ! DESCRIPTION: Fact(n)
 !> @brief
