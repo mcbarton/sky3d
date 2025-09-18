@@ -601,10 +601,10 @@ CONTAINS
           center(:,ifrag)=center(:,ifrag)/mass(ifrag)
        END DO
        ! stop if this is not a separated case
-       IF(.NOT.istwobody) EXIT
+       IF(.NOT.istwobody) EXIT Iteration
        ! end iterations if the c.m. remains constant
        IF(MAX(MAXVAL(ABS(cent(1,:)-center(1,:))), &
-            MAXVAL(ABS(cent(3,:)-center(3,:))))<1.0d-05) EXIT
+            MAXVAL(ABS(cent(3,:)-center(3,:))))<1.0d-05) EXIT Iteration
     ENDDO Iteration
     ! record separation distance
     IF(istwobody) THEN
