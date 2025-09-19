@@ -44,7 +44,9 @@ MODULE Inout
        sp_energy,sp_efluct1,nstmax,npsi,nprot,nneut,npmin,charge_number,&
        sp_spin,mass_number,psi
   IMPLICIT NONE
-  PRIVATE :: write_one_density,write_vec_density
+  PRIVATE
+  PUBLIC :: write_wavefunctions,write_densities,plot_density,sp_properties,  &
+       start_protocol
 CONTAINS
 !---------------------------------------------------------------------------
 ! DESCRIPTION: write_wavefunctions

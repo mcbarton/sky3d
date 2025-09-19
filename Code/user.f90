@@ -49,6 +49,7 @@ MODULE User
   ! allow(use-all)
   USE Levels
   IMPLICIT NONE
+  PRIVATE
 CONTAINS
   SUBROUTINE init_user
     STOP 'No user-supplied initialization'

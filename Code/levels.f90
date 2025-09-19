@@ -12,6 +12,10 @@ MODULE Levels
   USE Fourier, ONLY: pbackward, pforward, zbackward, zforward, ybackward, &
        yforward, xbackward, xforward
   IMPLICIT NONE
+  PRIVATE
+  PUBLIC :: cdervx,cdervy,cdervz,nstmax,npsi,nstloc,sp_kinetic,sp_orbital, &
+       sp_parity,isospin,wocc,sp_norm,sp_energy,sp_efluct1,nprot,nneut,npmin, &
+       charge_number,sp_spin,mass_number,psi,sp_efluct2,laplace,hmatr
   SAVE
   INTEGER :: nstmax                        !<is the total number of wave functions
   !!present in the calculation. For the MPI version only \c nstloc

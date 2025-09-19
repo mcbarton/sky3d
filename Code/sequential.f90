@@ -16,6 +16,9 @@ MODULE Parallel
   INTEGER :: mpi_nprocs,mpi_ierror,mpi_myproc, &
        processor_name,proc_namelen
   INTEGER :: mpi_comm_world,mpi_sum,mpi_double_precision
+  PRIVATE
+  PUBLIC :: node,localindex,mpi_myproc,mpi_nprocs, &
+       nstloc,globalindex,tmpi,mpi_comm_world,mpi_ierror
 CONTAINS     !  all dummy subroutines to run on a sequential machine
   !************************************************************************
   SUBROUTINE alloc_nodes

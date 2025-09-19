@@ -80,7 +80,7 @@ MODULE External
                                      !! because there is no COM correction implemented for this, however, it works fine in the
                                      !! cases of big doubly magic nuclei like \f$^{208}Pb\f$.
    REAL(db) :: r_avg=0.0d0          !< The value of \f$ \sqrt{<r^2>} \f$ used in the case of dipole boost.
-
+   PRIVATE
    PUBLIC ::L_val,M_val,ampl_ext,isoext
   SAVE
 CONTAINS

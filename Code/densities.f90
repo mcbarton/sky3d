@@ -16,6 +16,8 @@ MODULE Densities
   USE Levels, ONLY: cdervx,cdervy,cdervz
   USE Trivial, ONLY: cmulx,cmuly,cmulz
   IMPLICIT NONE
+  PRIVATE
+  PUBLIC :: rho,tau,sdens,sodens,current,alloc_densities
   SAVE
   !>@name Scalar densities:
   !>These are dimensioned <tt>(nx,ny,nz,2)</tt>,

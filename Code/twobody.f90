@@ -14,6 +14,8 @@ MODULE Twobody
   USE Coulomb, ONLY: wcoul
   USE Forces, ONLY: nucleon_mass
   IMPLICIT NONE
+  PRIVATE
+  PUBLIC :: twobody_analysis,istwobody,roft,roft_old
   ! Constants
   REAL(db),PARAMETER :: threshold=1.D-5 !< threshold density to recognze separate fragmenst
   ! Data describing initial configuration

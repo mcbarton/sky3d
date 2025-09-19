@@ -21,6 +21,9 @@
 MODULE Forces
   USE Params, ONLY: db,scratch,wflag, hbc, e2, pi
   IMPLICIT NONE
+  PRIVATE
+  PUBLIC :: h2ma,f,b0,b0p,b1,b1p,b2,b2p,b3,b3p,b4,b4p,slate,nucleon_mass, ipair,p, &
+       read_force
   SAVE
   !> This contains the parameters for pairing:
   TYPE Pairing

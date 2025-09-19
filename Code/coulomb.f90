@@ -128,7 +128,7 @@ MODULE Coulomb
   COMPLEX(db),PRIVATE,ALLOCATABLE,SAVE :: q(:,:,:) !<array for the complex Green’s function (isolated) or array
   !!of 1/r values. Its dimension also depends on the boundary condition.
   PUBLIC :: poisson,coulinit,wcoul
-  PRIVATE :: initiq
+  PRIVATE
 CONTAINS
 !---------------------------------------------------------------------------
 ! DESCRIPTION: poisson

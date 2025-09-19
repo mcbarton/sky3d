@@ -25,6 +25,8 @@ MODULE Static
        sp_properties,start_protocol
   USE Pairs, ONLY: pair,epair,avdelt
   IMPLICIT NONE
+  PRIVATE
+  PUBLIC :: getin_static,init_static,statichf,harmosc
   LOGICAL  :: tdiag=.FALSE.    !< if \c true, there is a diagonalization of
   !!the Hamiltonian during the later (after the 20th) static iterations.
   !!The 20 is hard coded in \c static.f90.
