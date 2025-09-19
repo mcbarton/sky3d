@@ -21,6 +21,9 @@ MODULE Fourier
   USE Grids, ONLY: nx,ny,nz
   USE ISO_C_BINDING, ONLY: c_long
   IMPLICIT NONE
+  PRIVATE
+  PUBLIC :: pbackward, pforward, zbackward, zforward, ybackward, yforward, &
+       xbackward, xforward
   !>@name plans for full three-dimensional forward and backward transforms for both spin components.
   !>@{
   INTEGER(C_LONG),SAVE :: pforward,pbackward

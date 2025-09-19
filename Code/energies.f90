@@ -77,6 +77,10 @@ MODULE Energies
   USE Grids, ONLY: nx,ny,nz
   USE Pairs, ONLY: epair
   IMPLICIT NONE
+  PRIVATE
+  PUBLIC :: ipair, ehfprev, ehf, efluct2prev, efluct2, efluct1prev, &
+       efluct1,tke,total_angmom,spin,orbital,ehfls,ehfint,ehfc,ehf3,ehf2,ehf1, &
+       ehf0,ecorc,e3corr
   SAVE
   ! total energies calculated in subroutine "energy" and "hfenergy"
   REAL(db) :: ehft            !< kinetic energy

@@ -10,6 +10,8 @@
 Module Spherical_Harmonics
   USE Params, ONLY: db,pi
   implicit none
+  PRIVATE
+  PUBLIC :: y_lm
 CONTAINS
 ! DESCRIPTION: Fact(n)
 !> @brief

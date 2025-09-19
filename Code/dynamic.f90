@@ -29,6 +29,8 @@ MODULE DYNAMIC
        sp_properties,start_protocol
   USE External, ONLY: l_val, M_val
   IMPLICIT NONE
+  PRIVATE
+  PUBLIC :: getin_dynamic,dynamichf
   SAVE
   INTEGER            :: nt                !< the number of the final time step to be
   !! calculated. In case of a restart this is smaller than the total number of time steps.

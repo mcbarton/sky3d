@@ -8,6 +8,14 @@
 !------------------------------------------------------------------------------
 MODULE Params
   IMPLICIT NONE
+  PRIVATE
+  PUBLIC :: db,scratch,wflag, hbc,e2,pi,tfft, &
+       printnow, diatriacontapolesfile,dipolesfile, &
+       hexadecapolesfile,monopolesfile,octupolesfile,quadrupolesfile, &
+       time,r0, tdynamic,tcoul,trestart,write_isospin,iter,nselect, &
+       scratch2,wffile,writeselect,mnof,nof,tstatic,converfile,mplot, &
+       spinfile,mprint,mrest,extfieldfile,energiesfile,momentafile
+
   !**********************************************************************
   !     data type definition                                            *
   !**********************************************************************

@@ -83,7 +83,6 @@ MODULE Fragments
   INTEGER  :: fnz(mnof)                !<indicate the grid size in z-direction on which
   !!the fragment wave functions are defined.
   PUBLIC   :: getin_fragments, read_fragments
-  PRIVATE  :: locate,phases
 CONTAINS
 !---------------------------------------------------------------------------
 ! DESCRIPTION: getin_fragments

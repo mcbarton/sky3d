@@ -2,6 +2,7 @@ MODULE User
   USE Params, ONLY: db
   USE Levels, ONLY: wocc,psi
   IMPLICIT NONE
+  PRIVATE
 CONTAINS
   SUBROUTINE init_user
     INTEGER :: ic,ix,iy,iz

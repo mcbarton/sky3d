@@ -49,7 +49,9 @@ MODULE Grids
   !!dynamically allocated with dimensions <tt> (nz,nz) </tt> and calculated in subroutine \c sder2.
               cdmpz         !<matrices describing the damping operation in the z-direction,
   !!dynamically allocated with dimensions <tt> (nz,nz) </tt> and calculated in subroutine \c setdmc.
-  PRIVATE :: init_coord, sder, sder2, setdmc, gauss
+  PRIVATE
+  PUBLIC :: nx,ny,nz,wxyz,dx,dy,dz,der1x,der1y,der1z,der2x,der2y,der2z, &
+       x,y,z,periodic,cdmpx,cdmpy,cdmpz,init_grid
 CONTAINS
 !---------------------------------------------------------------------------
 ! DESCRIPTION: init_grid

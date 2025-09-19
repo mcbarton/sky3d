@@ -43,7 +43,8 @@ Module Meanfield
   !!It is a vector, isospin-dependent field.
   REAL(db),ALLOCATABLE,DIMENSION(:,:,:,:,:) :: dbmass !<contains the gradient of \c bmass.
   !!It is a vector, isospin-dependent field.
-  PRIVATE :: divaq,aq,wlspot,dbmass
+  PRIVATE
+  PUBLIC :: upot,skyrme, hpsi,bmass,spot,alloc_fields
 CONTAINS
 !---------------------------------------------------------------------------
 ! DESCRIPTION: alloc_fields

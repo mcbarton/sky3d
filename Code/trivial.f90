@@ -10,6 +10,8 @@ MODULE Trivial
   USE Params, ONLY: db
   USE Grids, ONLY: nx,ny,nz,wxyz
   IMPLICIT NONE
+  PRIVATE
+  PUBLIC :: rpsnorm,overlap,cmulx,cmuly,cmulz,rmulx,rmuly,rmulz
 CONTAINS
 !---------------------------------------------------------------------------
 ! DESCRIPTION: cmulx

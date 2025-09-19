@@ -53,6 +53,9 @@ MODULE Parallel
   INTEGER :: mpi_nprocs                  !<number of MPI processes.
   INTEGER :: mpi_ierror                  !<varable for error output of MPI routines.
   INTEGER :: mpi_myproc                  !<the number of the local MPI process
+  PRIVATE
+  PUBLIC :: node,localindex,mpi_myproc,mpi_nprocs, &
+       nstloc,globalindex,tmpi,mpi_comm_world,mpi_ierror
 CONTAINS
 !---------------------------------------------------------------------------
 ! DESCRIPTION: alloc_nodes
