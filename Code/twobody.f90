@@ -234,9 +234,9 @@ CONTAINS
 !> REAL(db), solution vector.
 !---------------------------------------------------------------------------
   SUBROUTINE gauss(a,b,c)
-    REAL(db) :: a(3,3),b(3),c(3),det
-    INTENT(IN) :: a,b
-    INTENT(OUT) :: c
+    REAL(db), intent(in) :: a(3,3),b(3)
+    REAL(db), intent(out) ::c(3)
+    REAL(db) :: det
     det=a(1,3)**2*a(2,2)-2.D0*a(1,2)*a(1,3)*a(2,3)+a(1,1)*a(2,3)**2+ &
          a(1,2)**2*a(3,3)-a(1,1)*a(2,2)*a(3,3)
     IF(ABS(det)<1.D-8) THEN

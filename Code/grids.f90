@@ -136,11 +136,10 @@ CONTAINS
 !> REAL(db), array, returns matrix for damping.
 !---------------------------------------------------------------------------
   SUBROUTINE init_coord(name,nv,dv,v,der1v,der2v,cdmpv)
-    CHARACTER(len=1) :: name
-    INTEGER :: nv
-    REAL(db) :: dv
-    INTENT(IN) :: name,nv,dv
-    REAL(db),POINTER :: v(:),der1v(:,:), &
+    CHARACTER(len=1), intent(in) :: name
+    INTEGER, intent(in) :: nv
+    REAL(db), intent(in)  :: dv
+    REAL(db),POINTER, intent(out) :: v(:),der1v(:,:), &
          der2v(:,:),cdmpv(:,:)
     INTEGER :: i
     ALLOCATE(v(nv),der1v(nv,nv),der2v(nv,nv),cdmpv(nv,nv))
@@ -164,10 +163,9 @@ CONTAINS
 !> REAL(db), takes the grid spacing.
 !---------------------------------------------------------------------------
   PURE SUBROUTINE sder(der,nmax,d)
-    INTEGER :: nmax
-    REAL(db) :: d,der(:,:)
-    INTENT(IN) :: nmax,d
-    INTENT(OUT) :: der
+    INTEGER, intent(in) :: nmax
+    REAL(db), intent(in) :: d
+    REAL(db), intent(out) :: der(:,:)
     REAL(db) :: afac,sum
     INTEGER :: i,k,j,icn
     icn=(nmax+1)/2
@@ -195,10 +193,9 @@ CONTAINS
 !> REAL(db), takes the grid spacing.
 !---------------------------------------------------------------------------
   PURE SUBROUTINE sder2(der,nmax,d)
-    INTEGER :: nmax
-    REAL(db) :: d,der(1:nmax,1:nmax)
-    INTENT(IN) :: nmax,d
-    INTENT(OUT) :: der
+    INTEGER, intent(in)  :: nmax
+    REAL(db), intent(in) :: d
+    REAL(db), intent(out) :: der(1:nmax,1:nmax)
     REAL(db) :: afac,sum
     INTEGER :: i,k,j,icn
     icn=(nmax+1)/2
