@@ -31,35 +31,35 @@ CONTAINS     !  all dummy subroutines to run on a sequential machine
   !************************************************************************
   !> dummy function for the MPI routine
   SUBROUTINE mpi_init(ierror)
-    INTEGER :: ierror
+    INTEGER, intent(in) :: ierror
     STOP ' MPI_INIT: parallel calls inhibited '
     RETURN
   END SUBROUTINE mpi_init
   !************************************************************************
   !> dummy function for the MPI routine
   SUBROUTINE mpi_comm_size(comm_world,nprocs,ierror)
-    INTEGER :: ierror, nprocs, comm_world
+    INTEGER, intent(in) :: ierror, nprocs, comm_world
     STOP ' MPI_COMM_SIZE: parallel calls inhibited '
     RETURN
   END SUBROUTINE mpi_comm_size
   !************************************************************************
   !> dummy function for the MPI routine
   SUBROUTINE mpi_comm_rank(comm_world,myproc,ierror)
-    INTEGER :: ierror, myproc, comm_world
+    INTEGER, intent(in) :: ierror, myproc, comm_world
     STOP ' parallel calls inhibited '
     RETURN
   END SUBROUTINE mpi_comm_rank
   !************************************************************************
   !> dummy function for the MPI routine
   SUBROUTINE mpi_get_processor_name(processor_name,proc_namelen,ierror)
-    INTEGER :: ierror, processor_name, proc_namelen
+    INTEGER, intent(in) :: ierror, processor_name, proc_namelen
     STOP ' parallel calls inhibited '
     RETURN
   END SUBROUTINE mpi_get_processor_name
   !************************************************************************
   !> dummy function for the MPI routine
   SUBROUTINE mpi_barrier (comm_world, ierror)
-    INTEGER :: ierror, comm_world
+    INTEGER , intent(in) :: ierror, comm_world
     STOP ' parallel calls inhibited '
     RETURN
   END SUBROUTINE mpi_barrier
@@ -78,7 +78,7 @@ CONTAINS     !  all dummy subroutines to run on a sequential machine
   SUBROUTINE mpi_allreduce(rho,tmp_rho,length,        &
        i_double_precision,sum,  &
        comm_world,ierror)
-    INTEGER :: ierror, comm_world, i_double_precision, length, sum
+    INTEGER, intent(in) :: ierror, comm_world, i_double_precision, length, sum
     REAL(db), DIMENSION(:), INTENT(IN) :: rho,tmp_rho
     STOP ' parallel calls inhibited '
     RETURN

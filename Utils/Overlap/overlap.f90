@@ -113,7 +113,8 @@ CONTAINS
   END FUNCTION scalprod
   COMPLEX(db) function determinant(a,n)
     INTEGER,INTENT(IN) :: n
-    COMPLEX(db) :: a(n,n),det(2),work(n)
+    COMPLEX(db), intent(out) :: a(n,n)
+    COMPLEX(db) :: det(2),work(n)
     integer :: ipvt(n),info
     call zgefa(a,n,n,ipvt,info)
     if(info/=0) then

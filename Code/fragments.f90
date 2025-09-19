@@ -433,10 +433,10 @@ CONTAINS
 !> REAL(db), takes the shift
 !---------------------------------------------------------------------------
   PURE SUBROUTINE phases(n,a,c)
-    INTEGER :: n,i,k
+    INTEGER :: i,k
+    INTEGER, intent(in) :: n
     COMPLEX(db),INTENT(OUT) :: a(n)
-    REAL(db) :: c
-    INTENT(IN) :: n,c
+    REAL(db), intent(in) :: c
     DO i=1,n
        k=i-1
        IF(i>(n+1)/2) k=k-n

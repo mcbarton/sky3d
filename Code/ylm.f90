@@ -17,7 +17,8 @@ CONTAINS
    REAL(db) function Fact(n)result(Fct)
 
       IMPLICIT NONE
-      integer:: n,i
+      integer, intent(in):: n
+      integer :: i
       ! real(db)::Fct
       Fct=1.0d0
       do i =1,n
@@ -30,12 +31,13 @@ CONTAINS
    REAL(db) function Fact2(n)result(Fct2)
 
       IMPLICIT NONE
-      integer :: n,i
+      integer, intent(in) :: n
+      integer :: i
       ! real(db)::Fct2
       Fct2=1.0d0
-      do while (n>0)
-         Fct2 = Fct2*n
-         n=n-2
+      do i=0,n-1,2
+         IF(i==n-1) exit
+         Fct2 = Fct2*(n-i)
       end do
    end function Fact2
 
@@ -46,7 +48,8 @@ CONTAINS
       IMPLICIT NONE
       integer, intent(in) :: l,m
       integer :: em_i,em_i_lower,em_i_lower2,el,em
-      real(db):: P00,P10,P11,x
+      real(db):: P00,P10,P11
+      real(db), intent(in):: x
       real(db), ALLOCATABLE :: Ps(:,:)
 
       if (m>l)then

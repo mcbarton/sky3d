@@ -33,11 +33,10 @@ CONTAINS
 !! input wave function.
 !---------------------------------------------------------------------------
   PURE SUBROUTINE cmulx(xmat,pinn,pout,ifadd)
-    REAL(db) :: xmat(:,:)
-    COMPLEX(db) :: pinn(:,:,:,:),pout(:,:,:,:)
-    INTEGER :: ifadd
-    INTENT(IN) :: xmat,pinn,ifadd
-    INTENT(INOUT) :: pout
+    REAL(db), intent(in) :: xmat(:,:)
+    COMPLEX(db), intent(in) :: pinn(:,:,:,:)
+    COMPLEX(db), intent(inout) :: pout(:,:,:,:)
+    INTEGER, intent(in) :: ifadd
     INTEGER :: is,ix,iy,iz
     IF(ifadd==0) pout=0.0D0
     FORALL(is=1:2,ix=1:nx,iy=1:ny,iz=1:nz)
@@ -66,11 +65,10 @@ CONTAINS
 !! input wave function.
 !---------------------------------------------------------------------------
   PURE SUBROUTINE cmuly(ymat,pinn,pout,ifadd)
-    REAL(db) :: ymat(:,:)
-    COMPLEX(db) :: pinn(:,:,:,:),pout(:,:,:,:)
-    INTEGER :: ifadd
-    INTENT(IN) :: ymat,pinn,ifadd
-    INTENT(INOUT) :: pout
+    REAL(db), intent(in) :: ymat(:,:)
+    COMPLEX(db), intent(in) :: pinn(:,:,:,:)
+    COMPLEX(db), intent(inout) :: pout(:,:,:,:)
+    INTEGER, intent(in) :: ifadd
     INTEGER :: is,ix,iy,iz
     IF(ifadd==0) pout=0.0D0
     FORALL(is=1:2,ix=1:nx,iy=1:ny,iz=1:nz)
@@ -99,11 +97,10 @@ CONTAINS
 !! input wave function.
 !---------------------------------------------------------------------------
   PURE SUBROUTINE cmulz(zmat,pinn,pout,ifadd)
-    REAL(db) :: zmat(:,:)
-    COMPLEX(db) :: pinn(:,:,:,:),pout(:,:,:,:)
-    INTEGER :: ifadd
-    INTENT(IN) :: zmat,pinn,ifadd
-    INTENT(INOUT) :: pout
+    REAL(db), intent(in) :: zmat(:,:)
+    COMPLEX(db), intent(in) :: pinn(:,:,:,:)
+    COMPLEX(db), intent(inout) :: pout(:,:,:,:)
+    INTEGER, intent(in) :: ifadd
     INTEGER :: is,ix,iy,iz,izz
     IF(ifadd==0) pout=0.0D0
     !
@@ -165,8 +162,8 @@ CONTAINS
 !> COMPEX(db), array, takes \f$ psi_R \f$.
 !---------------------------------------------------------------------------
   PURE FUNCTION overlap(pl,pr)  RESULT(c)
-    COMPLEX(db) :: c,pl(:,:,:,:),pr(:,:,:,:)
-    INTENT(IN) :: pl,pr
+    COMPLEX(db), intent(in) :: pl(:,:,:,:),pr(:,:,:,:)
+    COMPLEX(db) :: c
     c=wxyz*SUM(CONJG(pl)*pr)
   END FUNCTION overlap
 !---------------------------------------------------------------------------
@@ -188,10 +185,9 @@ CONTAINS
 !! input wave function, if negative it is substracted.
 !---------------------------------------------------------------------------
   PURE SUBROUTINE rmulx(xmat,finn,fout,ifadd)
-    INTEGER :: ifadd
-    REAL(db) :: xmat(:,:),finn(:,:,:),fout(:,:,:)
-    INTENT(IN) :: xmat,finn,ifadd
-    INTENT(INOUT) :: fout
+    INTEGER, intent(in) :: ifadd
+    REAL(db), intent(in) :: xmat(:,:),finn(:,:,:)
+    REAL(db), intent(inout) :: fout(:,:,:)
     INTEGER :: ix,iy,iz
     IF(ifadd==0) fout=0.D0
     IF(ifadd>=0) THEN
@@ -223,10 +219,9 @@ CONTAINS
 !! input wave function, if negative it is substracted.
 !---------------------------------------------------------------------------
   PURE SUBROUTINE rmuly(ymat,finn,fout,ifadd)
-    INTEGER :: ifadd
-    REAL(db) :: ymat(:,:),finn(:,:,:),fout(:,:,:)
-    INTENT(IN) :: ymat,finn,ifadd
-    INTENT(INOUT) :: fout
+    INTEGER, intent(in) :: ifadd
+    REAL(db), intent(in) :: ymat(:,:),finn(:,:,:)
+    REAL(db), intent(inout) :: fout(:,:,:)
     INTEGER :: ix,iy,iz
     IF(ifadd==0) fout=0.D0
     IF(ifadd>=0) THEN
@@ -258,10 +253,9 @@ CONTAINS
 !! input wave function, if negative it is substracted.
 !---------------------------------------------------------------------------
   PURE SUBROUTINE rmulz(zmat,finn,fout,ifadd)
-    INTEGER :: ifadd
-    REAL(db) :: zmat(:,:),finn(:,:,:),fout(:,:,:)
-    INTENT(IN) :: zmat,finn,ifadd
-    INTENT(INOUT) :: fout
+    INTEGER, intent(in) :: ifadd
+    REAL(db), intent(in) :: zmat(:,:),finn(:,:,:)
+    REAL(db), intent(inout) ::fout(:,:,:)
     INTEGER :: ix,iy,iz
     IF(ifadd==0) fout=0.D0
     IF(ifadd>=0) THEN

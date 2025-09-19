@@ -318,12 +318,10 @@ CONTAINS
   SUBROUTINE hpsi(iq,eshift,pinn,pout)
     USE Trivial, ONLY: cmulx, cmuly, cmulz
     USE Levels, ONLY: cdervx,cdervy,cdervz
-    INTEGER :: iq
-    REAL(db) :: eshift
-    COMPLEX(db),DIMENSION(:,:,:,:) :: pinn,pout
-    INTENT(IN) :: iq,eshift
-    INTENT(INOUT) :: pinn
-    INTENT(OUT) :: pout
+    INTEGER, intent(in) :: iq
+    REAL(db), intent(in) :: eshift
+    COMPLEX(db),DIMENSION(:,:,:,:) , intent(out) :: pinn
+    COMPLEX(db),DIMENSION(:,:,:,:) , intent(out) :: pout
     INTEGER :: is,ic
     REAL(db) :: sigis
     COMPLEX(db),ALLOCATABLE,DIMENSION(:,:,:,:) :: pswk,pswk2

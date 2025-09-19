@@ -427,10 +427,9 @@ CONTAINS
     !
     !***********************************************************************
     INTEGER,INTENT(IN) :: nst,iq
-    REAL(db) :: spe,denerg
-    COMPLEX(db) :: psin(:,:,:,:)
-    INTENT(OUT) :: denerg
-    INTENT(INOUT) :: spe,psin
+    REAL(db), intent(inout) :: spe
+    REAL(db), intent(out) :: denerg
+    COMPLEX(db), intent(inout) :: psin(:,:,:,:)
     REAL(db) :: x0act,esf,enrold,xnorm,xnormb,exph2,varh2
     COMPLEX(db) :: ps1(nx,ny,nz,2),ps2(nx,ny,nz,2)
     INTEGER :: nst2
@@ -527,15 +526,14 @@ CONTAINS
             lwork, rwork, lrwork, iwork, liwork, info )
          USE Params, ONLY: db
          implicit none
-         INTEGER :: lda
-         CHARACTER(1) :: jobz, uplo
-         INTEGER :: info, ldab, liwork, lrwork, lwork, n, iwork(:)
-         DOUBLE PRECISION ::  rwork(:), w(:)
-         COMPLEX(db) :: a(:,:)
-         COMPLEX(db) :: work(:)
-         INTENT(IN) :: jobz,uplo,n,lda,lwork,lrwork,liwork
-         INTENT(INOUT) :: a
-         INTENT(OUT) :: w,work,rwork,iwork,info
+         INTEGER, intent(in) :: lda
+         CHARACTER(1), intent(in) :: jobz, uplo
+         INTEGER :: ldab
+         INTEGER, intent(in) :: liwork, lrwork, lwork, n
+         integer, intent(out) :: info, iwork(:)
+         DOUBLE PRECISION, intent(out) ::  rwork(:), w(:)
+         COMPLEX(db), intent(inout) :: a(:,:)
+         COMPLEX(db), intent(out) :: work(:)
        END SUBROUTINE zheevd
     END INTERFACE
     ! Step 1: copy matrix, then diagonalize

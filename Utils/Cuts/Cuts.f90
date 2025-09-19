@@ -40,10 +40,9 @@ PROGRAM Tdhf2Silo
   !*******************************************************************
 CONTAINS
   SUBROUTINE writeit(a,b,c,n,m,name)
-    REAL(db) :: a(:,:),b(:),c(:)
-    INTEGER :: n,m
-    CHARACTER(3) :: name
-    INTENT(IN) :: a,b,c,n,m,name
+    REAL(db), intent(in) :: a(:,:),b(:),c(:)
+    INTEGER, intent(in) :: n,m
+    CHARACTER(3), intent(in) :: name
     INTEGER :: i,j
     filename(7:9)=name
     WRITE(*,*) 'Writing ',filename

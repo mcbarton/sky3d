@@ -125,7 +125,8 @@ CONTAINS
 !---------------------------------------------------------------------------
   SUBROUTINE moments(L_val,M_val)
     USE Densities, ONLY: rho,current
-    INTEGER :: ix,iy,iz,iq,L_val,M_val,iii
+    INTEGER :: ix,iy,iz,iq,iii
+    INTEGER, intent(in) :: L_val,M_val
     REAL(db) :: xx(3),x2(3),vol,radius,eta
     REAL(db) :: qmat(3,3,2),qmtot(3,3)
     REAL(db) :: Mono(2),Quad(2),Oct(2),HexaDeca(2),DiaTriaConta(2),tmp,facn,facp
